@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"192.168.0.21","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="登录有点问题，还没整完就异常了。有需要的话可以参考下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 妖火吃肉脚本">
+<meta property="og:url" content="http://192.168.0.21:58089/2023/05/e55600c849a3.html">
+<meta property="og:site_name" content="Singularity">
+<meta property="og:description" content="登录有点问题，还没整完就异常了。有需要的话可以参考下">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-26T17:01:12.000Z">
+<meta property="article:modified_time" content="2023-05-26T18:09:32.496Z">
+<meta property="article:author" content="Singularity">
+<meta property="article:tag" content="python 妖火">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://192.168.0.21:58089/2023/05/e55600c849a3.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://192.168.0.21:58089/2023/05/e55600c849a3.html","path":"2023/05/e55600c849a3.html","title":"python 妖火吃肉脚本"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>python 妖火吃肉脚本 | Singularity</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Singularity</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Singularity</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://192.168.0.21:58089/2023/05/e55600c849a3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Singularity">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Singularity">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="python 妖火吃肉脚本 | Singularity">
+      <meta itemprop="description" content="登录有点问题，还没整完就异常了。有需要的话可以参考下">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python 妖火吃肉脚本
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-27 01:01:12 / 修改时间：02:09:32" itemprop="dateCreated datePublished" datetime="2023-05-27T01:01:12+08:00">2023-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">登录有点问题，还没整完就异常了。有需要的话可以参考下</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>忘了哪一年从妖火下载的，这几天用发现失效了，修改了下，登录还没弄账号就异常了，不整了不整了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding:utf8</span></span><br><span class="line"><span class="keyword">import</span> requests, re, random, sqlite3, os, time, datetime, http.client, ssl</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">logname = <span class="string">&#x27;xxxxxxxxxxxxx&#x27;</span> <span class="comment">#帐号</span></span><br><span class="line">logpass = <span class="string">&#x27;xxxxxxxxxxxxxxxxxxxx&#x27;</span><span class="comment">#密码</span></span><br><span class="line">yaohuo = <span class="string">&#x27;http://yaohuo.me&#x27;</span></span><br><span class="line">counts = <span class="number">3</span> <span class="comment">#爬取最新帖子页数</span></span><br><span class="line">cookie = <span class="literal">None</span></span><br><span class="line">CONTENT = [<span class="string">&#x27;吃&#x27;</span>, <span class="string">&#x27;吃.&#x27;</span>, <span class="string">&#x27;吃..&#x27;</span>, <span class="string">&#x27;吃...&#x27;</span>, <span class="string">&#x27;吃rou&#x27;</span>,<span class="string">&#x27;吃肉.&#x27;</span>, <span class="string">&#x27;吃吃.&#x27;</span>,  <span class="string">&#x27;吃肉&#x27;</span>, <span class="string">&#x27;吃个肉&#x27;</span>, <span class="string">&#x27;吃了&#x27;</span>, <span class="string">&#x27;吃吃&#x27;</span>, <span class="string">&#x27;感谢&#x27;</span>]</span><br><span class="line">errorInterval=<span class="number">0</span></span><br><span class="line">meats=<span class="number">0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def login():</span></span><br><span class="line"><span class="comment">#     url = yaohuo + &#x27;/waplogin.aspx&#x27;</span></span><br><span class="line"><span class="comment">#     _data = &#123;&#x27;logname&#x27;: logname,</span></span><br><span class="line"><span class="comment">#              &#x27;logpass&#x27;: logpass,</span></span><br><span class="line"><span class="comment">#              &#x27;action&#x27;: &#x27;login&#x27;,</span></span><br><span class="line"><span class="comment">#              &#x27;classid&#x27;: &#x27;0&#x27;,</span></span><br><span class="line"><span class="comment">#              &#x27;siteid&#x27;: &#x27;1000&#x27;,</span></span><br><span class="line"><span class="comment">#              &#x27;sid&#x27;: &#x27;&#x27;,</span></span><br><span class="line"><span class="comment">#              &#x27;backurl&#x27;: &#x27;wapindex.aspx?sid=-2&#x27;,</span></span><br><span class="line"><span class="comment">#              &#x27;referer&#x27;: &#x27;&#x27;&#125;</span></span><br><span class="line"><span class="comment">#     headers = &#123;</span></span><br><span class="line"><span class="comment">#         &#x27;DNT&#x27;: &#x27;1&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Upgrade-Insecure-Requests&#x27;: &#x27;1&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Sec-Fetch-User&#x27;: &#x27;?1&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Pragma&#x27;: &#x27;no-cache&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Cookie&#x27;: &#x27;ASP.NET_SessionId=aj4ha245f0s3e2bwabasfqnv; GUID=4f157b2221583112&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Accept&#x27;: &#x27;*/*&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Host&#x27;: &#x27;yaohuo.me&#x27;,</span></span><br><span class="line"><span class="comment">#         &#x27;Connection&#x27;: &#x27;keep-alive&#x27;</span></span><br><span class="line"><span class="comment">#     &#125;</span></span><br><span class="line"><span class="comment">#     r = requests.post(url, data=_data)</span></span><br><span class="line"><span class="comment">#     return requests.utils.dict_from_cookiejar(r.cookies)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认的 HTTPS上下文 使用 不校验的上下文</span></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line"><span class="comment"># netconn = http.client.HTTPSConnection(&quot;yaohuo.me&quot;)</span></span><br><span class="line"></span><br><span class="line">payload = <span class="string">&#x27;&#x27;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;DNT&#x27;</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Upgrade-Insecure-Requests&#x27;</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Sec-Fetch-User&#x27;</span>: <span class="string">&#x27;?1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Pragma&#x27;</span>: <span class="string">&#x27;no-cache&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Cookie&#x27;</span>: <span class="string">&#x27;ASP.NET_SessionId=xxxxxxxxxxxxxxx; GUID=xxxxxxxxxxxxxxxxxxxx; sidyaohuo=xxxxxxxxxxxxxxxxxxxxxxx; sidyaohuo=xxxxxxxxxxxxxxxxxxxxxxxx&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;*/*&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Host&#x27;</span>: <span class="string">&#x27;yaohuo.me&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;Connection&#x27;</span>: <span class="string">&#x27;keep-alive&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_conn</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args,**kargs</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">&#x27;yaohuo.db&#x27;</span>):</span><br><span class="line">            conn = sqlite3.connect(<span class="string">&#x27;yaohuo.db&#x27;</span>)</span><br><span class="line">            cursor = conn.cursor()</span><br><span class="line">            sql = <span class="string">&#x27;&#x27;&#x27;CREATE TABLE yaohuo (</span></span><br><span class="line"><span class="string">                        `id`	INTEGER NOT NULL UNIQUE,</span></span><br><span class="line"><span class="string">                        `classid` INTEGER NOT NULL,</span></span><br><span class="line"><span class="string">                        `url`	TEXT NOT NULL,</span></span><br><span class="line"><span class="string">                        `datetime`	NUMERIC NOT NULL</span></span><br><span class="line"><span class="string">                        );</span></span><br><span class="line"><span class="string">                        &#x27;&#x27;&#x27;</span></span><br><span class="line">            cursor.execute(sql)</span><br><span class="line">            cursor.close()</span><br><span class="line">            conn.commit()</span><br><span class="line">            conn.close()</span><br><span class="line">        conn = sqlite3.connect(<span class="string">&#x27;yaohuo.db&#x27;</span>)</span><br><span class="line">        cursor = conn.cursor()</span><br><span class="line">        result = func(args,cursor)</span><br><span class="line">        cursor.close()</span><br><span class="line">        conn.commit()</span><br><span class="line">        conn.close()</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_insert</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    cursor.execute(<span class="string">&#x27;insert into &quot;yaohuo&quot; values (?,?,?,?)&#x27;</span>, (args[<span class="number">0</span>][<span class="number">0</span>], args[<span class="number">0</span>][<span class="number">1</span>], args[<span class="number">0</span>][<span class="number">2</span>], time.time()))</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_del</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(args[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">    cursor.execute(<span class="string">&#x27;delete from &quot;yaohuo&quot; where id = ?&#x27;</span>, (args[<span class="number">0</span>][<span class="number">0</span>],))</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_traversal</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    cursor.execute(<span class="string">&#x27;select * from yaohuo&#x27;</span>)</span><br><span class="line">    result = cursor.fetchall()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_update</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    cursor.execute(<span class="string">&#x27;update &quot;yaohuo&quot; set &quot;datetime&quot;=? where id = ?&#x27;</span>, (time.time(), args[<span class="number">0</span>][<span class="number">0</span>]))</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_check</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    cursor.execute(<span class="string">&#x27;select * from yaohuo where id = ?&#x27;</span>, (args[<span class="number">0</span>][<span class="number">0</span>],))</span><br><span class="line">    result = cursor.fetchall()</span><br><span class="line">    <span class="keyword">if</span> ( <span class="built_in">len</span>(result) == <span class="number">0</span> ):</span><br><span class="line">        result=<span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        result=<span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="meta">@sql_conn</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sql_detailcheck</span>(<span class="params">*args</span>):</span><br><span class="line">    cursor = args[<span class="number">1</span>]</span><br><span class="line">    cursor.execute(<span class="string">&#x27;select * from yaohuo where id = ?&#x27;</span>, (args[<span class="number">0</span>][<span class="number">0</span>],))</span><br><span class="line">    result = cursor.fetchall()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">craw</span>(<span class="params">newurl,netconn</span>):</span><br><span class="line">    netconn.request(<span class="string">&quot;GET&quot;</span>, newurl, payload, headers)</span><br><span class="line">    res = netconn.getresponse()</span><br><span class="line">    page = res.read().decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    soup = BeautifulSoup(page, <span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line">    links = soup.find_all(<span class="string">&#x27;div&#x27;</span>, class_=re.<span class="built_in">compile</span>(<span class="string">r&#x27;line\d&#x27;</span>))</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">str</span>(link).find(<span class="string">&#x27;/NetImages/li.gif&#x27;</span>)) != -<span class="number">1</span>:</span><br><span class="line">            url = re.findall(<span class="string">r&#x27;href=&quot;(.*)html&#x27;</span>, <span class="built_in">str</span>(link))[<span class="number">0</span>] + <span class="string">&#x27;html&#x27;</span></span><br><span class="line">            netconn.request(<span class="string">&quot;GET&quot;</span>, url, payload, headers)</span><br><span class="line">            res = netconn.getresponse()</span><br><span class="line">            r = res.read().decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">            soup = BeautifulSoup(r, <span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line">            <span class="built_in">id</span> = re.findall(<span class="string">r&#x27;value=&quot;(.*)&quot;&#x27;</span>, <span class="built_in">str</span>(soup.find_all(<span class="string">&#x27;input&#x27;</span>, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&quot;id&quot;</span>&#125;)))[<span class="number">0</span>]</span><br><span class="line">            classid = re.findall(<span class="string">r&#x27;value=&quot;(.*)&quot;&#x27;</span>, <span class="built_in">str</span>(soup.find_all(<span class="string">&#x27;input&#x27;</span>, &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&quot;classid&quot;</span>&#125;)))[<span class="number">0</span>]</span><br><span class="line">            text = soup.find(<span class="string">&#x27;div&#x27;</span>, class_=re.<span class="built_in">compile</span>(<span class="string">r&#x27;paibi&#x27;</span>)).text      <span class="comment">#网页文本</span></span><br><span class="line">            searchObj = re.search( <span class="string">r&#x27;(余[0-9]&#123;0,&#125;[1-9]&#123;1,&#125;)&#x27;</span>, text, re.M|re.I)</span><br><span class="line">            <span class="keyword">if</span> searchObj:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;不余0：&#x27;</span> + text + <span class="string">&#x27;\n&#x27;</span> + yaohuo+url)</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    <span class="keyword">if</span> sql_check(<span class="built_in">id</span>):</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;已经吃过:&quot;</span>+yaohuo+url)</span><br><span class="line">                        <span class="keyword">try</span>:</span><br><span class="line">                            a1=sql_detailcheck(<span class="built_in">id</span>)[<span class="number">0</span>][<span class="number">3</span>]</span><br><span class="line">                            a2=time.strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>, time.localtime(a1))</span><br><span class="line">                            <span class="built_in">print</span>(a2)</span><br><span class="line">                            a3=time.strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>, time.localtime())</span><br><span class="line">                            <span class="built_in">print</span>(a3)</span><br><span class="line">                            <span class="keyword">if</span> a2 != a3:</span><br><span class="line">                                <span class="built_in">print</span>(<span class="string">&quot;再次开吃：&quot;</span>+yaohuo+url)</span><br><span class="line">                                eat(<span class="built_in">id</span>, classid,netconn)</span><br><span class="line">                                sql_update(<span class="built_in">id</span>, classid,url)</span><br><span class="line">                            <span class="keyword">continue</span></span><br><span class="line">                        <span class="keyword">except</span>:</span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">&quot;再次开吃出错:&quot;</span>+yaohuo+url)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;开吃：&quot;</span>+yaohuo+url)</span><br><span class="line">                        eat(<span class="built_in">id</span>, classid,netconn)</span><br><span class="line">                        sql_insert(<span class="built_in">id</span>, classid,url)</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;出错&#x27;</span>)</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;余0:&#x27;</span> + text + <span class="string">&#x27;\n&#x27;</span> + yaohuo+url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">eat</span>(<span class="params"><span class="built_in">id</span>, classid,netconn</span>):</span><br><span class="line">    <span class="keyword">global</span> meats</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        tryeatcount=<span class="number">0</span></span><br><span class="line">        eatObj = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">while</span> (eatObj <span class="keyword">is</span> <span class="literal">None</span>) <span class="keyword">and</span> ( tryeatcount &lt; <span class="number">5</span> ):</span><br><span class="line">            _data = <span class="string">&#x27;face=&amp;sendmsg=0&amp;content=&#x27;</span>+<span class="built_in">str</span>(CONTENT[(random.randint(<span class="number">1</span>, <span class="built_in">len</span>(CONTENT) - <span class="number">1</span>))])+<span class="string">&#x27;&amp;action=add&amp;id=&#x27;</span>+<span class="built_in">id</span>+<span class="string">&#x27;&amp;siteid=1000&amp;lpage=1&amp;classid=&#x27;</span>+classid+<span class="string">&#x27;&amp;sid=07BFF226E0AF500_3C6_03179_21730_21001-2-0-0-0-0&amp;g=%E5%BF%AB%E9%80%9F%E5%9B%9E%E5%A4%8D&#x27;</span></span><br><span class="line">            netconn.request(<span class="string">&quot;POST&quot;</span>, <span class="string">&#x27;/bbs/book_re.aspx&#x27;</span>, _data.encode(<span class="string">&#x27;utf-8&#x27;</span>), headers)</span><br><span class="line">            res = netconn.getresponse()</span><br><span class="line">            r = res.read().decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">            eattext= BeautifulSoup(r, <span class="string">&#x27;html.parser&#x27;</span>).text</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&#x27;请不要发重复内容&#x27;</span> <span class="keyword">in</span> eattext):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;请不要发重复内容&#x27;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            eatObj=re.search( <span class="string">r&#x27;(获得妖晶:[0-9]&#123;0,&#125;，获得经验:[0-9]&#123;0,&#125;)&#x27;</span>, eattext, re.M|re.I)</span><br><span class="line">            <span class="built_in">print</span>(eatObj.group())</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                m1=re.search( <span class="string">r&#x27;(获得妖晶:[0-9]&#123;0,&#125;)&#x27;</span>, eattext, re.M|re.I)</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    m2=re.search( <span class="string">r&#x27;([0-9]&#123;1,&#125;)&#x27;</span>, <span class="built_in">str</span>(m1.group(<span class="number">1</span>)), re.M|re.I)</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;计算吃肉结果失败2&#x27;</span>)</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    meats=meats+<span class="built_in">int</span>(m2.group(<span class="number">1</span>))</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&#x27;计算吃肉结果失败3&#x27;</span>)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="comment"># meats= 0</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;计算吃肉结果失败&#x27;</span>)</span><br><span class="line">            tryeatcount += <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;吃肉结果未知&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># cookie = login()</span></span><br><span class="line">    <span class="comment"># url = yaohuo + &#x27;/bbs/book_list.aspx?action=new&amp;siteid=1000&amp;classid=0&amp;getTotal=2002&amp;page=&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;/bbs/book_list.aspx?action=new&amp;siteid=1000&amp;classid=0&amp;getTotal=2023&amp;page=&#x27;</span></span><br><span class="line">    maincount = <span class="number">1</span>       <span class="comment">#查询次数</span></span><br><span class="line">    var = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> var == <span class="number">1</span> :  <span class="comment"># 表达式永远为 true</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            netconn = http.client.HTTPSConnection(<span class="string">&quot;yaohuo.me&quot;</span>)</span><br><span class="line">            <span class="comment"># 刷新间隔，单位 秒</span></span><br><span class="line">            refreshInterval=<span class="number">60</span> + random.randint(-<span class="number">40</span>, <span class="number">55</span>)</span><br><span class="line">            <span class="comment"># localtime = time.asctime( time.localtime(time.time()) )</span></span><br><span class="line">            d1 = datetime.datetime.now()</span><br><span class="line">            localtime=<span class="built_in">str</span>(d1)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;-------------第&#x27;</span>+<span class="built_in">str</span>(maincount)+<span class="string">&#x27;次查询，累积吃肉：&#x27;</span>+<span class="built_in">str</span>(meats)+<span class="string">&#x27;,开始时间：&#x27;</span>+localtime+<span class="string">&#x27;---------------&#x27;</span>)</span><br><span class="line">            subcount=counts</span><br><span class="line">            <span class="keyword">while</span> subcount != <span class="number">0</span>:</span><br><span class="line">                <span class="comment"># print(&#x27;||||||||||||||||||||||||||||&#x27;)</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&#x27;------第&#x27;</span>+<span class="built_in">str</span>(subcount)+<span class="string">&#x27;页----------&#x27;</span>)</span><br><span class="line">                craw(url + <span class="built_in">str</span>(subcount),netconn)</span><br><span class="line">                subcount -= <span class="number">1</span></span><br><span class="line">            netconn.close()</span><br><span class="line">            errorInterval=<span class="number">0</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            errorInterval=errorInterval+random.randint(<span class="number">120</span>, <span class="number">600</span>)</span><br><span class="line">            d3 = d1 + datetime.timedelta(seconds=errorInterval)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;出错，等待&#x27;</span> + <span class="built_in">str</span>(errorInterval) + <span class="string">&#x27;s后继续,下次执行时间：&#x27;</span>+<span class="built_in">str</span>(d3))</span><br><span class="line">            time.sleep(errorInterval)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># netconn = http.client.HTTPSConnection(&quot;yaohuo.me&quot;)</span></span><br><span class="line">        <span class="comment"># for result in sql_traversal():</span></span><br><span class="line">        <span class="comment">#     t = time.time() - float(result[3])</span></span><br><span class="line">        <span class="comment">#     # print(t)#距离上次吃肉时间 86400=24小时</span></span><br><span class="line">        <span class="comment">#     if t &gt; 86400:</span></span><br><span class="line">        <span class="comment">#         netconn.request(&quot;GET&quot;, yaohuo+result[2], payload, headers)</span></span><br><span class="line">        <span class="comment">#         res = netconn.getresponse()</span></span><br><span class="line">        <span class="comment">#         r = res.read().decode(&quot;utf-8&quot;)</span></span><br><span class="line">        <span class="comment">#         detailtext= BeautifulSoup(r, &#x27;html.parser&#x27;).text</span></span><br><span class="line">        <span class="comment">#         # &#x27;余0&#x27; not in detailtext</span></span><br><span class="line">        <span class="comment">#         # r = requests.get(result[2], cookies=cookie).content.decode(&#x27;utf-8&#x27;)</span></span><br><span class="line">        <span class="comment">#         # if (r.find(&#x27;余0&#x27;)) == -1 or (r.find(&#x27;没有权限&#x27;)) == -1 or (r.find(&#x27;结束原因:&#x27;)) == -1:</span></span><br><span class="line">        <span class="comment">#         # searchObj = re.search( r&#x27;(余0\d)&#123;1,&#125;&#x27;, detailtext, re.M|re.I)</span></span><br><span class="line">        <span class="comment">#         # if searchObj:</span></span><br><span class="line">        <span class="comment">#         if (re.search( r&#x27;(余[0-9]&#123;0,&#125;[1-9]&#123;1,&#125;)&#x27;, detailtext, re.M|re.I)) or  (&#x27;没有权限&#x27; not in detailtext) or (&#x27;结束原因:&#x27; not in detailtext) :</span></span><br><span class="line">        <span class="comment">#             eat(result[0], result[1],netconn)</span></span><br><span class="line">        <span class="comment">#             sql_update(result[0])</span></span><br><span class="line">        <span class="comment">#         else:</span></span><br><span class="line">        <span class="comment">#             sql_del(result[0])</span></span><br><span class="line">        </span><br><span class="line">        netconn.close()</span><br><span class="line">        maincount += <span class="number">1</span></span><br><span class="line">        d1 = datetime.datetime.now() + datetime.timedelta(seconds=refreshInterval)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;等待&#x27;</span> + <span class="built_in">str</span>(refreshInterval) + <span class="string">&#x27;s后继续,下次执行时间：&#x27;</span>+<span class="built_in">str</span>(d1))</span><br><span class="line">        time.sleep(refreshInterval)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#再次吃肉</span></span><br><span class="line">    <span class="comment"># for result in sql_traversal():</span></span><br><span class="line">    <span class="comment">#     t = time.time() - float(result[3])</span></span><br><span class="line">    <span class="comment">#     print(t)#距离上次吃肉时间 86400=24小时</span></span><br><span class="line">    <span class="comment">#     if t &gt; 86400:</span></span><br><span class="line">    <span class="comment">#         r = requests.get(result[2], cookies=cookie).content.decode(&#x27;utf-8&#x27;)</span></span><br><span class="line">    <span class="comment">#         if (r.find(&#x27;余0&#x27;)) == -1 or (r.find(&#x27;没有权限&#x27;)) == -1 or (r.find(&#x27;结束原因:&#x27;)) == -1:</span></span><br><span class="line">    <span class="comment">#             eat(result[0], result[1])</span></span><br><span class="line">    <span class="comment">#             sql_update(result[0])</span></span><br><span class="line">    <span class="comment">#         else:</span></span><br><span class="line">    <span class="comment">#             sql_del(result[0])</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python-%E5%A6%96%E7%81%AB/" rel="tag"># python 妖火</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/841c939be235.html" rel="prev" title="基于pve的nas主机">
+                  <i class="fa fa-chevron-left"></i> 基于pve的nas主机
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/05/44d80c163548.html" rel="next" title="基于alpine生成 docker镜像">
+                  基于alpine生成 docker镜像 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Singularity</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">37k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">33 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
