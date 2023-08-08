@@ -14,8 +14,8 @@
       </tags>
   </entry>
   <entry>
-    <title>通过docker执行定时任务</title>
-    <url>/2023/08/398e264359f7.html</url>
+    <title>通过docker执行定时任务，关闭h3c nx30pro的ipv6防火墙</title>
+    <url>/2023/08/e225cd787955.html</url>
     <content><![CDATA[<p>新买的路由器h3c nx30pro有ipv6防火墙，论坛里说可以通过telnet关闭，但是修改无法持久化保存，每次重启后都会还原。<br>群晖没有telnet,于是使用docker来定时执行脚本。<br>群晖下创建镜像的时候总是没网，所以使用另一台nas下的alpine创建镜像，之后推送到镜像仓库，再在群晖下部署。</p>
 <p>h3cipv6.sh</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">username=&quot;H3C&quot;</span><br><span class="line">password=&quot;xxxxxx&quot;</span><br><span class="line">ip=&quot;192.168.124.1&quot;</span><br><span class="line">Cmd1=&quot;ip6tables -F;ip6tables -X;ip6tables -P INPUT ACCEPT;ip6tables -P OUTPUT ACCEPT;ip6tables -P FORWARD ACCEPT&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Cmd2=<span class="string">&quot;ip6tables -L;date;&quot;</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">start</span></span><br><span class="line">(</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $username;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $password;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $Cmd1;</span><br><span class="line"> sleep 5;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">echo</span> <span class="variable">$Cmd2</span>;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">sleep</span> 1;</span></span><br><span class="line"> echo exit</span><br><span class="line">)|telnet $ip 99</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">end</span></span><br></pre></td></tr></table></figure>
