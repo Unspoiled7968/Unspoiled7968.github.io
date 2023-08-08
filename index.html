@@ -150,7 +150,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -161,7 +161,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -190,6 +190,113 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.656.buzz/2023/08/398e264359f7.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Singularity">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Singularity">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Singularity">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/398e264359f7.html" class="post-title-link" itemprop="url">通过docker执行定时任务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-08 17:18:23 / 修改时间：17:38:57" itemprop="dateCreated datePublished" datetime="2023-08-08T17:18:23+08:00">2023-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>新买的路由器h3c nx30pro有ipv6防火墙，论坛里说可以通过telnet关闭，但是修改无法持久化保存，每次重启后都会还原。<br>群晖没有telnet,于是使用docker来定时执行脚本。<br>群晖下创建镜像的时候总是没网，所以使用另一台nas下的alpine创建镜像，之后推送到镜像仓库，再在群晖下部署。</p>
+<p>h3cipv6.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">username=&quot;H3C&quot;</span><br><span class="line">password=&quot;xxxxxx&quot;</span><br><span class="line">ip=&quot;192.168.124.1&quot;</span><br><span class="line">Cmd1=&quot;ip6tables -F;ip6tables -X;ip6tables -P INPUT ACCEPT;ip6tables -P OUTPUT ACCEPT;ip6tables -P FORWARD ACCEPT&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Cmd2=<span class="string">&quot;ip6tables -L;date;&quot;</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">start</span></span><br><span class="line">(</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $username;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $password;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $Cmd1;</span><br><span class="line"> sleep 5;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">echo</span> <span class="variable">$Cmd2</span>;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">sleep</span> 1;</span></span><br><span class="line"> echo exit</span><br><span class="line">)|telnet $ip 99</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">end</span></span><br></pre></td></tr></table></figure>
+
+
+<p>docker-compose.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">crond:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">        <span class="attr">context:</span> <span class="string">./build/</span></span><br><span class="line">        <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">crond</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&#x27;./data:/data/data&#x27;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&#x27;./log:/var/log&#x27;</span></span><br><span class="line">        <span class="comment"># - &quot;/etc/localtime:/etc/localtime:ro&quot;</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">host</span></span><br><span class="line">    <span class="comment"># image: cloudflare/cloudflared:latest</span></span><br><span class="line">    <span class="comment"># command:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/398e264359f7.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -725,9 +832,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-05-27 01:22:44 / 修改时间：01:34:33" itemprop="dateCreated datePublished" datetime="2023-05-27T01:22:44+08:00">2023-05-27</time>
+      <time title="创建时间：2023-05-27 01:22:44" itemprop="dateCreated datePublished" datetime="2023-05-27T01:22:44+08:00">2023-05-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-08 17:17:26" itemprop="dateModified" datetime="2023-08-08T17:17:26+08:00">2023-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1105,113 +1218,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.656.buzz/2022/10/75b1329e4902.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Singularity">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Singularity">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Singularity">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/75b1329e4902.html" class="post-title-link" itemprop="url">通过python对爱奇艺犯罪电影的爬取</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-19 20:21:51" itemprop="dateCreated datePublished" datetime="2022-10-19T20:21:51+08:00">2022-10-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-27 00:50:25" itemprop="dateModified" datetime="2023-05-27T00:50:25+08:00">2023-05-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">Coding</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>106</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>尝试使用python对爱奇艺犯罪电影信息爬取，并生成excel</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/75b1329e4902.html">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1236,13 +1242,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">37k</span>
+    <span title="站点总字数">40k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">34 分钟</span>
+    <span title="站点阅读时长">36 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
