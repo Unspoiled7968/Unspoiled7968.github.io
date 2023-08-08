@@ -268,11 +268,6 @@
     <div class="post-body" itemprop="articleBody">
           <p>新买的路由器h3c nx30pro有ipv6防火墙，论坛里说可以通过telnet关闭，但是修改无法持久化保存，每次重启后都会还原。<br>群晖没有telnet,于是使用docker来定时执行脚本。<br>群晖下创建镜像的时候总是没网，所以使用另一台nas下的alpine创建镜像，之后推送到镜像仓库，再在群晖下部署。</p>
 <p>h3cipv6.sh</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line">username=&quot;H3C&quot;</span><br><span class="line">password=&quot;xxxxxx&quot;</span><br><span class="line">ip=&quot;192.168.124.1&quot;</span><br><span class="line">Cmd1=&quot;ip6tables -F;ip6tables -X;ip6tables -P INPUT ACCEPT;ip6tables -P OUTPUT ACCEPT;ip6tables -P FORWARD ACCEPT&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Cmd2=<span class="string">&quot;ip6tables -L;date;&quot;</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">start</span></span><br><span class="line">(</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $username;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $password;</span><br><span class="line"> sleep 0.5;</span><br><span class="line"> echo $Cmd1;</span><br><span class="line"> sleep 5;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">echo</span> <span class="variable">$Cmd2</span>;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"> <span class="built_in">sleep</span> 1;</span></span><br><span class="line"> echo exit</span><br><span class="line">)|telnet $ip 99</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">end</span></span><br></pre></td></tr></table></figure>
-
-
-<p>docker-compose.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">crond:</span></span><br><span class="line">    <span class="attr">build:</span></span><br><span class="line">        <span class="attr">context:</span> <span class="string">./build/</span></span><br><span class="line">        <span class="attr">dockerfile:</span> <span class="string">Dockerfile</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">crond</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&#x27;./data:/data/data&#x27;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&#x27;./log:/var/log&#x27;</span></span><br><span class="line">        <span class="comment"># - &quot;/etc/localtime:/etc/localtime:ro&quot;</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">host</span></span><br><span class="line">    <span class="comment"># image: cloudflare/cloudflared:latest</span></span><br><span class="line">    <span class="comment"># command:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/08/398e264359f7.html#more" rel="contents">
@@ -375,13 +370,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>编辑~&#x2F;.ssh&#x2F;config文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 账号A</span><br><span class="line">Host codeup_1</span><br><span class="line">HostName codeup.aliyun.com</span><br><span class="line">IdentityFile ~/.ssh/codeup_1</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityAgent none</span><br><span class="line">IdentitiesOnly yes</span><br><span class="line"></span><br><span class="line"># 账号B</span><br><span class="line">Host codeup_2</span><br><span class="line">HostName codeup.aliyun.com</span><br><span class="line">IdentityFile ~/.ssh/codeup_2</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityAgent none</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>HostName：填写托管平台服务地址；</li>
-<li>Host：填写别名，方便命令行使用；</li>
-<li>IdentityFile：填写证书位置；</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/0dcad8ef81ca.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
