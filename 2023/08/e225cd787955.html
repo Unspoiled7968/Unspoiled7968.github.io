@@ -27,7 +27,7 @@
 <meta property="og:description" content="新买的路由器h3c nx30pro有ipv6防火墙，论坛里说可以通过telnet关闭，但是修改无法持久化保存，每次重启后都会还原。群晖没有telnet,于是使用docker来定时执行脚本。群晖下创建镜像的时候总是没网，所以使用另一台nas下的alpine创建镜像，之后推送到镜像仓库（导出镜像之后手动上传到群晖也可以），再在群晖下部署。 h3c_disableipv6firewall.sh">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-08T09:18:23.000Z">
-<meta property="article:modified_time" content="2023-08-08T09:53:13.349Z">
+<meta property="article:modified_time" content="2023-08-08T09:53:24.104Z">
 <meta property="article:author" content="Singularity">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="synology">
@@ -236,7 +236,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-08-08 17:18:23 / 修改时间：17:53:13" itemprop="dateCreated datePublished" datetime="2023-08-08T17:18:23+08:00">2023-08-08</time>
+      <time title="创建时间：2023-08-08 17:18:23 / 修改时间：17:53:24" itemprop="dateCreated datePublished" datetime="2023-08-08T17:18:23+08:00">2023-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -288,7 +288,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line">[ -f /data/data/crontab.txt ] || touch /data/data/crontab.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">start cron</span></span><br><span class="line">/usr/local/bin/supercronic /data/data/crontab.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p> crontab.txt</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* * * * * bash /data/h3cipv6.sh   &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* * * * * bash /data/h3c_disableipv6firewall.sh   &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>将Dockerfile，entry.sh，crontab.txt放到与docker-compose.yml同级的build目录下，执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d --build</span><br></pre></td></tr></table></figure>

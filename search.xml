@@ -31,7 +31,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/sh</span></span><br><span class="line"></span><br><span class="line">[ -f /data/data/crontab.txt ] || touch /data/data/crontab.txt</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">start cron</span></span><br><span class="line">/usr/local/bin/supercronic /data/data/crontab.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p> crontab.txt</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* * * * * bash /data/h3cipv6.sh   &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* * * * * bash /data/h3c_disableipv6firewall.sh   &gt;/dev/null 2&gt;&amp;1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>将Dockerfile，entry.sh，crontab.txt放到与docker-compose.yml同级的build目录下，执行</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker-compose up -d --build</span><br></pre></td></tr></table></figure>
