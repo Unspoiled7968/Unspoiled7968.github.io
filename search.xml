@@ -241,7 +241,7 @@
 
 
 <p>生成博客内容</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
 
 <p>github 自定义域名<br>自定义域名xxx.xx，个人用户名ppp<br>添加cname记录xxx.xx指向ppp.github.io<br>在项目的settings页面中的pages，填入xxx.xx。</p>
 ]]></content>
