@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>未命名</title>
+    <title>在一个linux下配置多个ssh私钥</title>
     <url>/2023/08/0dcad8ef81ca.html</url>
     <content><![CDATA[<p>编辑~&#x2F;.ssh&#x2F;config文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 账号A</span><br><span class="line">Host codeup_1</span><br><span class="line">HostName codeup.aliyun.com</span><br><span class="line">IdentityFile ~/.ssh/codeup_1</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityAgent none</span><br><span class="line">IdentitiesOnly yes</span><br><span class="line"></span><br><span class="line"># 账号B</span><br><span class="line">Host codeup_2</span><br><span class="line">HostName codeup.aliyun.com</span><br><span class="line">IdentityFile ~/.ssh/codeup_2</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityAgent none</span><br><span class="line">IdentitiesOnly yes</span><br></pre></td></tr></table></figure>
